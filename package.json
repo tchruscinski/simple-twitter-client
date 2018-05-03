@@ -1,0 +1,14 @@
+{
+  "name": "twitter_client",
+  "version": "1.0.0",
+  "description": "Single Page Application made using Twitter API",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tomasz Chruściński",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^6.0.0"
+  }
+}

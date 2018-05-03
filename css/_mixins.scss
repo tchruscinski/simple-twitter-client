@@ -1,0 +1,5 @@
+@mixin prefix($name, $value) {
+  @each $prefix in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$prefix}#{$name}: #{$value};
+  }
+}
