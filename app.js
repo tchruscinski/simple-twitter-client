@@ -20,16 +20,10 @@ var object = {
   "username": "",
   "name": "",
   "image": "",
-  "friends": {
-    "username": "",
-    "name": "",
-    "image": ""
-  },
-  "followers":{
-    "username": "",
-    "name": "",
-    "image": ""
-  }
+  "friends": [
+  ],
+  "followers": [
+  ]
 }
 
 client.get('account/verify_credentials', function(error, params) {
@@ -42,21 +36,33 @@ client.get('account/verify_credentials', function(error, params) {
 client.get('friends/list', function(error, params) {
   if(error) throw error;
   for(var i = 0; i < params.users.length; i++){
-    object.friends.username =  params.users.screen_name;
-    object.friends.name =  params.users.name;
-    object.friends.image =  params.users.profile_image_url;
+    var friend = {
+      "username": "",
+      "name": "",
+      "image": ""
+    }
+    friend.username =  params.users[i].screen_name;
+    friend.name =  params.users[i].name;
+    friend.image =  params.users[i].profile_image_url;
+
+    object.friends[i] = friend;
   }
 });
 
 client.get('followers/list', function(error, params) {
   if(error) throw error;
   for(var i = 0; i < params.users.length; i++){
-    object.followers.username =  params.users.screen_name;
-    object.followers.name =  params.users.name;
-    object.followers.image =  params.users.profile_image_url;
+    var follower = {
+      "name": "",
+      "image": ""
+    }
+    follower.username =  params.users[i].screen_name;
+    follower.name =  params.users[i].name;
+    follower.image =  params.users[i].profile_image_url;
+
+    object.followers[i] = follower;
   }
 });
-
 
 //ROUTES
 
@@ -65,7 +71,12 @@ app.get("/", function(req, res){
 });
 
 app.get('/main', function(req, res){
-  res.render("index.ejs", {username: object.username, name: object.name, image: object.image, friends: object.friends, followers: object.following});
+  res.render("index.ejs", {
+    username: object.username,
+    name: object.name,
+    image: object.image,
+    friends: object.friends,
+    followers: object.followers});
 });
 
 

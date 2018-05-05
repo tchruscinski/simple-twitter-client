@@ -9,12 +9,20 @@
       </picture>
       <h1 id="name"><%= name %></h1>
       <h4 id="username">@<%= username %></h4>
-      <button class="friends">Obserwowani</button>
-      <button class="followers">Ostatni Obserwujący</button>
+      <button id="friends">Obserwowani</button>
+      <button id="followers">Ostatni Obserwujący</button>
     </section>
 
     <section class="posts">
-      <div id="container"></div>
+    // <% friends.forEach(function(friends){ %>
+    // <div>
+    //     <h2><%= friend.name %></h2>
+    //     <img src="<%= friend.image %>">
+    //     <h4><%= friend.username %></h4>
+    // </div>
+    //   <% }) %>
+      <div id="container">
+      </div>
     </section>
 
   </main>
