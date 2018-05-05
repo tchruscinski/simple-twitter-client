@@ -9,23 +9,60 @@
       </picture>
       <h1 id="name"><%= name %></h1>
       <h4 id="username">@<%= username %></h4>
-      <button id="friends">Obserwowani</button>
-      <button id="followers">Ostatni Obserwujący</button>
+      <button id="friends-button">Obserwowani</button>
+      <button id="followers-button">Ostatni Obserwujący</button>
     </section>
 
     <section class="posts">
-    // <% friends.forEach(function(friends){ %>
-    // <div>
-    //     <h2><%= friend.name %></h2>
-    //     <img src="<%= friend.image %>">
-    //     <h4><%= friend.username %></h4>
-    // </div>
-    //   <% }) %>
       <div id="container">
       </div>
     </section>
 
   </main>
+<script>
+  var friends  = <%-JSON.stringify(friends)%>,
+   followers   = <%-JSON.stringify(followers)%>,
+   friendsButton = document.getElementById('friends-button'),
+   followersButton = document.getElementById('followers-button'),
+   toggleFriends   = 0,
+   toggleFollowers = 0;
 
+  function displayFriends(){
+    var container = document.getElementById("container");
+
+    if(toggleFriends == 1){
+      container.innerHTML = "";
+      toggleFriends = 0;
+      return;
+    }
+
+    for(var i = 0; i < friends.length; i++){
+      var friend = "<div><img src="+friends[i].image+"><h1>"+friends[i].name+"</h1><h4>"+friends[i].username+"</h4></div>";
+      container.insertAdjacentHTML('beforeend', friend)
+    }
+    toggleFriends = 1;
+  }
+
+  function displayFollowers(){
+    var container = document.getElementById("container");
+
+    if(toggleFollowers == 1){
+      container.innerHTML = "";
+      toggleFollowers = 0;
+      return;
+    }
+
+    for(var i = 0; i < followers.length; i++){
+      var follower = "<div><img src="+followers[i].image+"><h1>"+followers[i].name+"</h1><h4>"+followers[i].username+"</h4></div>";
+      container.insertAdjacentHTML('beforeend', follower)
+    }
+    toggleFollowers = 1;
+  }
+
+
+  friendsButton.addEventListener("click", displayFriends);
+  followersButton.addEventListener("click", displayFollowers);
+
+</script>
 
 <% include ./partials/footer.ejs %>

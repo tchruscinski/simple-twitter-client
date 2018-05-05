@@ -62,7 +62,7 @@ main{
         margin: 1% 0 0;
       }
 
-      #friends, #followers
+      #friends-button, #followers-button
       {
         border: 1px solid $button-color;
         color: $button-color;
@@ -74,7 +74,7 @@ main{
         display: block;
       }
 
-      #friends:hover, #followers:hover
+      #friends-button:hover, #followers-button:hover
       {
         background-color: $button-hover-background;
       }

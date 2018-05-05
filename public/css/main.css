@@ -63,7 +63,7 @@ main .profile h4 {
   font-weight: normal;
   margin: 1% 0 0;
 }
-main .profile .friends, main .profile .followers {
+main .profile #friends-button, main .profile #followers-button {
   border: 1px solid #1da1f2;
   color: #1da1f2;
   border-radius: 10px;
@@ -73,7 +73,7 @@ main .profile .friends, main .profile .followers {
   margin: 3% 0;
   display: block;
 }
-main .profile .friends:hover, main .profile .followers:hover {
+main .profile #friends-button:hover, main .profile #followers-button:hover {
   background-color: #e6f9ff;
 }
 main .posts {

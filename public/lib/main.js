@@ -1,8 +1,8 @@
 var friendsButton = document.getElementById('friends');
 var followersButton = document.getElementById('followers');
 
-var friends = <%= friends %>;
-var followers = <%= followers %>;
+var friends = "<%= friends %>";
+var followers = "<%= followers %>";
 
 function displayFriends(){
   var container = document.getElementById("container");
