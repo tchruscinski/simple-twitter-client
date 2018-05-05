@@ -82,5 +82,11 @@ main{
 
   .posts{
     order: 2;
+
+    .tweet{
+      background-color: $white;
+      border-radius: 20px;
+      width: 90%;
+    }
   }
 }

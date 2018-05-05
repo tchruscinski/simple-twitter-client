@@ -79,5 +79,10 @@ main .profile #friends-button:hover, main .profile #followers-button:hover {
 main .posts {
   order: 2;
 }
+main .posts .tweet {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 90%;
+}
 
 /*# sourceMappingURL=public/css/main.css.map */

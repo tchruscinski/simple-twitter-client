@@ -14,6 +14,14 @@
     </section>
 
     <section class="posts">
+    <% tweets.forEach(function(tweet){ %>
+      <div class="tweet">
+        <h2><%= tweet.name %></h2>
+        <h4><%= tweet.username %></h4>
+        <h6><%= tweet.time %></h6>
+        <p><%= tweet.text %><p/>
+      </div>
+    <% }) %>
       <div id="container">
       </div>
     </section>
