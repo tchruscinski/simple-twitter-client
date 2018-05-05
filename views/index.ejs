@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs %>
+  <nav>
+      <i class="fab fa-twitter"></i>
+  </nav>
+  <main>
+    <section class="profile">
+      <picture>
+        <img src="<%= image %>" alt="Profile picture">
+      </picture>
+      <h1 id="name"><%= name %></h1>
+      <h4 id="username">@<%= username %></h4>
+      <button class="friends">Obserwowani</button>
+      <button class="followers">Ostatni Obserwujący</button>
+    </section>
+
+    <section class="posts">
+      <div id="container"></div>
+    </section>
+
+  </main>
+
+
+<% include ./partials/footer.ejs %>
