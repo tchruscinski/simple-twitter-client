@@ -170,10 +170,10 @@ main .posts {
   width: 70%;
   overflow: auto;
 }
-main .posts .tweet:nth-of-type(1) {
+main .posts .tweet:nth-of-type(1), main .posts #container .list:nth-of-type(1) {
   margin-top: 3%;
 }
-main .posts .tweet {
+main .posts .tweet, main .posts #container .list {
   background-color: #fff;
   border-radius: 20px;
   width: 80%;
@@ -195,36 +195,39 @@ main .posts .tweet {
   display: flex;
   flex-wrap: wrap;
 }
-main .posts .tweet h2 {
+main .posts .tweet h2, main .posts #container .list h2 {
   order: 2;
   margin: 2% 1% 0;
 }
-main .posts .tweet h4 {
+main .posts .tweet h4, main .posts #container .list h4 {
   color: #657786;
   font-weight: normal;
   order: 3;
   margin: 2.5% 1% 0 0;
 }
-main .posts .tweet img {
+main .posts .tweet img, main .posts #container .list img {
   border-radius: 50px;
   margin: 2% 3% 0 5%;
   order: 1;
   width: 48px;
   height: 48px;
 }
-main .posts .tweet p {
+main .posts .tweet p, main .posts #container .list p {
   margin: 0 0 5% 20%;
   order: 10;
   color: #1da1f2;
   font-size: 2em;
 }
-main .posts .tweet:hover {
+main .posts .tweet:hover, main .posts #container .list:hover {
   -webkit-transform: translate(-1%,0);
   -moz-transform: translate(-1%,0);
   -ms-transform: translate(-1%,0);
   -o-transform: translate(-1%,0);
   transform: translate(-1%,0);
   -webkit-font-smoothing: subpixel-antialiased;
+}
+main .posts #container {
+  display: none;
 }
 
 /*# sourceMappingURL=public/css/main.css.map */

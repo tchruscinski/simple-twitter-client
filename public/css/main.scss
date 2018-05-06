@@ -157,5 +157,14 @@ main{
       @include prefix('transform', 'translate(-1%,0)');
       -webkit-font-smoothing: subpixel-antialiased;
     }
+
+    #container{
+      display: none;
+
+      .list{
+        @extend .tweet;
+      }
+    }
+
   }
 }

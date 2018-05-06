@@ -12,15 +12,17 @@
     </section>
 
     <section class="posts">
-    <% tweets.forEach(function(tweet){ %>
-      <div class="tweet">
-        <img src="<%= image %>" alt="Profile picture">
-        <h2><%= tweet.name %></h2>
-        <h4>@<%= tweet.username %></h4>
-        <h4><%= tweet.time %></h4>
-        <p><%= tweet.text %><p/>
-      </div>
-    <% }) %>
+    <div id="tweets-container">
+      <% tweets.forEach(function(tweet){ %>
+        <div class="tweet">
+          <img src="<%= image %>" alt="Profile picture">
+          <h2><%= tweet.name %></h2>
+          <h4>@<%= tweet.username %></h4>
+          <h4><%= tweet.time %></h4>
+          <p><%= tweet.text %><p/>
+        </div>
+      <% }) %>
+    </div>
       <div id="container">
       </div>
     </section>
@@ -41,11 +43,15 @@
         if(toggleFriends == 1){
           container.innerHTML = "";
           toggleFriends = 0;
+          document.getElementById('tweets-container').style.display = "block";
           return;
         }
 
+        document.getElementById('tweets-container').style.display = "none";
+        container.style.display = "block";
+
         for(var i = 0; i < friends.length; i++){
-          var friend = "<div><img src="+friends[i].image+"><h1>"+friends[i].name+"</h1><h4>"+friends[i].username+"</h4></div>";
+          var friend = "<div class='list'><img src="+friends[i].image+"><h2>"+friends[i].name+"</h2><h4>"+friends[i].username+"</h4></div>";
           container.insertAdjacentHTML('beforeend', friend)
         }
         toggleFriends = 1;
@@ -57,11 +63,15 @@
         if(toggleFollowers == 1){
           container.innerHTML = "";
           toggleFollowers = 0;
+          document.getElementById('tweets-container').style.display = "block";
           return;
         }
 
+        document.getElementById('tweets-container').style.display = "none";
+        container.style.display = "block";
+
         for(var i = 0; i < followers.length; i++){
-          var follower = "<div><img src="+followers[i].image+"><h1>"+followers[i].name+"</h1><h4>"+followers[i].username+"</h4></div>";
+          var follower = "<div class='list'><img src="+followers[i].image+"><h2>"+followers[i].name+"</h2><h4>"+followers[i].username+"</h4></div>";
           container.insertAdjacentHTML('beforeend', follower)
         }
         toggleFollowers = 1;
