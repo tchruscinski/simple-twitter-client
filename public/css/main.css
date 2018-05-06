@@ -98,9 +98,9 @@ body {
 nav {
   background-color: #1da1f2;
   width: 100%;
-  height: 8vh;
+  height: 3em;
   text-align: center;
-  line-height: 8vh;
+  line-height: 3em;
   -webkit-box-shadow: 0px 0px 1px 2px rgba(122,113,122,0.75);
   -moz-box-shadow: 0px 0px 1px 2px rgba(122,113,122,0.75);
   -ms-box-shadow: 0px 0px 1px 2px rgba(122,113,122,0.75);
@@ -156,7 +156,7 @@ main .profile #friends-button, main .profile #followers-button, main .profile #t
   border: 1px solid #1da1f2;
   color: #1da1f2;
   border-radius: 10px;
-  padding: 4px 12px;
+  padding: 6px 14px;
   font-weight: bold;
   background-color: #fff;
   margin: 3% 0;
@@ -177,7 +177,7 @@ main .posts .tweet, main .posts #container .list {
   background-color: #fff;
   border-radius: 20px;
   width: 80%;
-  height: 25%;
+  height: 10em;
   margin: 0 auto 2%;
   padding: 0;
   -webkit-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
@@ -185,15 +185,16 @@ main .posts .tweet, main .posts #container .list {
   -ms-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
   -o-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
   box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   transform: translateZ(0);
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
+  overflow: auto;
 }
 main .posts .tweet h2, main .posts #container .list h2 {
   order: 2;
@@ -214,7 +215,7 @@ main .posts .tweet img, main .posts #container .list img {
 }
 main .posts .tweet p, main .posts #container .list p {
   margin: 0 0 5% 20%;
-  order: 10;
+  order: 5;
   color: #1da1f2;
   font-size: 2em;
 }
@@ -228,6 +229,141 @@ main .posts .tweet:hover, main .posts #container .list:hover {
 }
 main .posts #container {
   display: none;
+}
+main .posts #container .list {
+  max-height: 5em !important;
+}
+main .posts #container .list:hover {
+  -webkit-transform: translate(-1%,0);
+  -moz-transform: translate(-1%,0);
+  -ms-transform: translate(-1%,0);
+  -o-transform: translate(-1%,0);
+  transform: translate(-1%,0);
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@media only screen and (max-width: 1230px) {
+  .posts h2 {
+    font-size: 1.2em;
+    margin-top: 2.3% !important;
+  }
+  .posts h4 {
+    font-size: 0.8em;
+    margin-top: 3% !important;
+  }
+}
+@media only screen and (max-width: 1010px) {
+  .posts h2 {
+    font-size: 1em;
+    margin-top: 2.6% !important;
+  }
+  .posts h4 {
+    font-size: 0.6em;
+    margin-top: 3.5% !important;
+  }
+  .posts p {
+    font-size: 1.5em !important;
+    margin-bottom: 10% !important;
+  }
+}
+@media only screen and (max-width: 810px) {
+  .posts .tweet, main .posts #container .list {
+    height: 8em !important;
+  }
+  .posts h2 {
+    font-size: 0.8em;
+    margin-top: 2.9% !important;
+  }
+  .posts h4 {
+    font-size: 0.4em;
+    margin-top: 4% !important;
+  }
+}
+@media only screen and (max-width: 750px) {
+  .posts .tweet, main .posts #container .list {
+    margin-bottom: 4% !important;
+  }
+  .posts .tweet p, main .posts #container .list p {
+    font-size: 1.3em !important;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .profile h1 {
+    font-size: 1.3em !important;
+    margin-top: 6% !important;
+  }
+  .profile h4 {
+    font-size: 0.8em !important;
+    margin-top: 2% !important;
+  }
+  .profile button {
+    font-size: 10px !important;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .posts .tweet, main .posts #container .list {
+    height: 7em !important;
+  }
+  .posts .tweet h2, main .posts #container .list h2 {
+    margin-top: 3.5% !important;
+  }
+  .posts .tweet h4, main .posts #container .list h4 {
+    margin-top: 4.6% !important;
+  }
+  .posts .tweet h4:nth-of-type(2), main .posts #container .list h4:nth-of-type(2) {
+    display: none;
+  }
+  .posts .tweet p, main .posts #container .list p {
+    font-size: 1em !important;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .posts .tweet, main .posts #container .list {
+    height: 6em !important;
+  }
+  .posts .tweet img, main .posts #container .list img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .posts .tweet h2, main .posts #container .list h2 {
+    margin-top: 5% !important;
+  }
+  .posts .tweet h4, main .posts #container .list h4 {
+    margin-top: 6.5% !important;
+  }
+  .posts .tweet p, main .posts #container .list p {
+    font-size: 0.8em !important;
+  }
+  .posts .list {
+    height: 3em !important;
+  }
+
+  .profile {
+    padding-left: 2% !important;
+  }
+}
+@media only screen and (max-width: 475px) {
+  .posts .tweet, main .posts #container .list {
+    width: 90% !important;
+  }
+  .posts .tweet h4, main .posts #container .list h4 {
+    display: none;
+  }
+  .posts .tweet p, main .posts #container .list p {
+    margin-left: 30%;
+  }
+
+  .profile h1 {
+    font-size: 1em !important;
+  }
+  .profile h4 {
+    font-size: 0.5em !important;
+    margin: 4% 0 1% !important;
+  }
+  .profile button {
+    font-size: 8px !important;
+    padding: 4px 6px !important;
+  }
 }
 
 /*# sourceMappingURL=public/css/main.css.map */
