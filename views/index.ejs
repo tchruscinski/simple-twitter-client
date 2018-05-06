@@ -1,7 +1,4 @@
 <% include ./partials/header.ejs %>
-  <nav>
-      <i class="fab fa-twitter"></i>
-  </nav>
   <main>
     <section class="profile">
       <picture>
@@ -11,14 +8,16 @@
       <h4 id="username">@<%= username %></h4>
       <button id="friends-button">Obserwowani</button>
       <button id="followers-button">Ostatni Obserwujący</button>
+      <a href="/tweet"><button id="tweet-button">Tweet +</button></a>
     </section>
 
     <section class="posts">
     <% tweets.forEach(function(tweet){ %>
       <div class="tweet">
+        <img src="<%= image %>" alt="Profile picture">
         <h2><%= tweet.name %></h2>
-        <h4><%= tweet.username %></h4>
-        <h6><%= tweet.time %></h6>
+        <h4>@<%= tweet.username %></h4>
+        <h4><%= tweet.time %></h4>
         <p><%= tweet.text %><p/>
       </div>
     <% }) %>

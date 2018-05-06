@@ -1,0 +1,22 @@
+@import "variables";
+@import "mixins";
+
+
+.form-container{
+  width: 50%;
+  height: 50%;
+  background-color: $white;
+  margin: 10% auto 0;
+  box-sizing: border-box;
+  border-radius: 25px;
+  @include prefix('box-shadow', '2px 3px 3px 0px rgba(122,113,122,0.75)');
+
+  .field{
+    margin: 10% auto 0;
+
+  label{
+    font-size: 2em;
+    font-weight: bold;
+    }
+  }
+}

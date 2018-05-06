@@ -27,7 +27,6 @@ var object = {
   "followers": [
   ],
   "tweets": [
-
   ]
 }
 
@@ -36,7 +35,7 @@ client.get('account/verify_credentials', function(error, data) {
   if(error) throw error;
   object.username = data.screen_name;
   object.name = data.name;
-  object.image = data.profile_image_url;
+  object.image = data.profile_image_url.replace(/_normal\./, '.');
 });
 
 
@@ -113,6 +112,19 @@ app.get('/main', function(req, res){
   });
 });
 
+app.get('/tweet', function(req,res){
+    res.render("tweet.ejs");
+});
+
+
+app.post('/main', function(req, res){
+
+   client.post('statuses/update', {status: 'I am a tweet'}, function(error, tweet, response) {
+      if (!error) {
+        console.log(tweet);
+      }
+  });
+});
 
 
 

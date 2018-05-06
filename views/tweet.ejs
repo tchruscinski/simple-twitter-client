@@ -1,0 +1,15 @@
+<% include ./partials/header.ejs %>
+
+<div class="form-container">
+  <form action="/main" method="POST">
+      <div class="field">
+          <label>Tweet Content</label>
+          <textarea name="tweet[body]"></textarea>
+      </div>
+      <input type="submit">
+  </form>
+</div>
+
+
+
+<% include ./partials/footer.ejs %>
