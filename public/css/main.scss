@@ -16,6 +16,7 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: auto;
 }
 
 nav{
@@ -44,9 +45,11 @@ main{
     background-color: $white;
     order: 1;
     width: 30%;
-    height: 100%;
+    min-height: 100%;
+    position: relative;
     padding: 5% 0 0 5%;
     box-sizing: border-box;
+    overflow: auto;
     @include prefix('box-shadow', '5px 0px 14px -5px rgba(122,113,122,0.75)');
 
       img{
@@ -59,6 +62,8 @@ main{
       h1{
         padding: 0;
         margin: 5% 0 0;
+        height: auto;
+        width: 30%;
       }
 
       h4{
@@ -88,6 +93,7 @@ main{
   .posts{
     order: 2;
     width: 70%;
+    overflow: auto;
 
     .tweet:nth-of-type(1){
       margin-top: 3%;
@@ -97,7 +103,7 @@ main{
       background-color: $white;
       border-radius: 20px;
       width: 80%;
-      min-height: 25%;
+      height: 25%;
       margin: 0 auto 2%;
       padding: 0;
       @include prefix('box-shadow', '2px 3px 3px 0px rgba(122,113,122,0.75)');

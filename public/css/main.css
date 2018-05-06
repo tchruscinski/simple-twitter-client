@@ -10,15 +10,74 @@
   -ms-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
   -o-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
   box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
+  overflow: auto;
+}
+.form-container h1 {
+  margin: 5% auto 0;
+  width: 60%;
+  text-align: center;
+}
+.form-container label {
+  visibility: hidden;
+}
+.form-container form {
+  width: 70%;
+  height: 60%;
+  margin: 0 auto 0;
 }
 .form-container .field {
-  margin: 10% auto 0;
+  margin: 0 auto 0;
+  width: 100%;
+  height: 100%;
 }
-.form-container .field label {
-  font-size: 2em;
+.form-container .field textarea {
+  width: 100%;
+  height: 80%;
+  -webkit-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  -moz-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  -ms-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  -o-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  border: 1px solid #1da1f2;
+  border-radius: 7px;
+}
+.form-container .field textarea:focus {
+  -webkit-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  -moz-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  -ms-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  -o-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
+  background-color: #ddd;
+  border: 3px solid #1da1f2;
+}
+.form-container .field .tweet-submit {
+  float: right;
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
+  border-radius: 10px;
+  padding: 4px 12px;
   font-weight: bold;
+  background-color: #fff;
+  margin: 3% 0;
+  display: block;
 }
 
+@media only screen and (max-width: 990px) {
+  .form-container {
+    width: 60%;
+  }
+  .form-container h1 {
+    font-size: 1.7em;
+  }
+}
+@media only screen and (max-width: 715px) {
+  .form-container {
+    width: 70%;
+  }
+  .form-container h1 {
+    font-size: 1.3em;
+  }
+}
 html {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 100%;
@@ -33,6 +92,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: auto;
 }
 
 nav {
@@ -64,9 +124,11 @@ main .profile {
   background-color: #fff;
   order: 1;
   width: 30%;
-  height: 100%;
+  min-height: 100%;
+  position: relative;
   padding: 5% 0 0 5%;
   box-sizing: border-box;
+  overflow: auto;
   -webkit-box-shadow: 5px 0px 14px -5px rgba(122,113,122,0.75);
   -moz-box-shadow: 5px 0px 14px -5px rgba(122,113,122,0.75);
   -ms-box-shadow: 5px 0px 14px -5px rgba(122,113,122,0.75);
@@ -82,6 +144,8 @@ main .profile img {
 main .profile h1 {
   padding: 0;
   margin: 5% 0 0;
+  height: auto;
+  width: 30%;
 }
 main .profile h4 {
   color: #657786;
@@ -104,6 +168,7 @@ main .profile #friends-button:hover, main .profile #followers-button:hover, main
 main .posts {
   order: 2;
   width: 70%;
+  overflow: auto;
 }
 main .posts .tweet:nth-of-type(1) {
   margin-top: 3%;
@@ -112,7 +177,7 @@ main .posts .tweet {
   background-color: #fff;
   border-radius: 20px;
   width: 80%;
-  min-height: 25%;
+  height: 25%;
   margin: 0 auto 2%;
   padding: 0;
   -webkit-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);

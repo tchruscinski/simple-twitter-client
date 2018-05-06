@@ -27,48 +27,49 @@
 
   </main>
 <script>
-  var friends  = <%-JSON.stringify(friends)%>,
-   followers   = <%-JSON.stringify(followers)%>,
-   friendsButton = document.getElementById('friends-button'),
-   followersButton = document.getElementById('followers-button'),
-   toggleFriends   = 0,
-   toggleFollowers = 0;
 
-  function displayFriends(){
-    var container = document.getElementById("container");
+      var friends  = <%-JSON.stringify(friends)%>,
+       followers   = <%-JSON.stringify(followers)%>,
+       friendsButton = document.getElementById('friends-button'),
+       followersButton = document.getElementById('followers-button'),
+       toggleFriends   = 0,
+       toggleFollowers = 0;
 
-    if(toggleFriends == 1){
-      container.innerHTML = "";
-      toggleFriends = 0;
-      return;
-    }
+      function displayFriends(){
+        var container = document.getElementById("container");
 
-    for(var i = 0; i < friends.length; i++){
-      var friend = "<div><img src="+friends[i].image+"><h1>"+friends[i].name+"</h1><h4>"+friends[i].username+"</h4></div>";
-      container.insertAdjacentHTML('beforeend', friend)
-    }
-    toggleFriends = 1;
-  }
+        if(toggleFriends == 1){
+          container.innerHTML = "";
+          toggleFriends = 0;
+          return;
+        }
 
-  function displayFollowers(){
-    var container = document.getElementById("container");
+        for(var i = 0; i < friends.length; i++){
+          var friend = "<div><img src="+friends[i].image+"><h1>"+friends[i].name+"</h1><h4>"+friends[i].username+"</h4></div>";
+          container.insertAdjacentHTML('beforeend', friend)
+        }
+        toggleFriends = 1;
+      }
 
-    if(toggleFollowers == 1){
-      container.innerHTML = "";
-      toggleFollowers = 0;
-      return;
-    }
+      function displayFollowers(){
+        var container = document.getElementById("container");
 
-    for(var i = 0; i < followers.length; i++){
-      var follower = "<div><img src="+followers[i].image+"><h1>"+followers[i].name+"</h1><h4>"+followers[i].username+"</h4></div>";
-      container.insertAdjacentHTML('beforeend', follower)
-    }
-    toggleFollowers = 1;
-  }
+        if(toggleFollowers == 1){
+          container.innerHTML = "";
+          toggleFollowers = 0;
+          return;
+        }
+
+        for(var i = 0; i < followers.length; i++){
+          var follower = "<div><img src="+followers[i].image+"><h1>"+followers[i].name+"</h1><h4>"+followers[i].username+"</h4></div>";
+          container.insertAdjacentHTML('beforeend', follower)
+        }
+        toggleFollowers = 1;
+      }
 
 
-  friendsButton.addEventListener("click", displayFriends);
-  followersButton.addEventListener("click", displayFollowers);
+      friendsButton.addEventListener("click", displayFriends);
+      followersButton.addEventListener("click", displayFollowers);
 
 </script>
 
