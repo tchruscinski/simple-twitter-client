@@ -51,7 +51,7 @@
         container.style.display = "block";
 
         for(var i = 0; i < friends.length; i++){
-          var friend = "<div class='list'><img src="+friends[i].image+"><h2>"+friends[i].name+"</h2><h4>"+friends[i].username+"</h4></div>";
+          var friend = "<div class='list'><img src="+friends[i].image+"><h2>"+friends[i].name+"</h2><h4>@"+friends[i].username+"</h4></div>";
           container.insertAdjacentHTML('beforeend', friend)
         }
         toggleFriends = 1;
@@ -71,7 +71,7 @@
         container.style.display = "block";
 
         for(var i = 0; i < followers.length; i++){
-          var follower = "<div class='list'><img src="+followers[i].image+"><h2>"+followers[i].name+"</h2><h4>"+followers[i].username+"</h4></div>";
+          var follower = "<div class='list'><img src="+followers[i].image+"><h2>"+followers[i].name+"</h2><h4>@"+followers[i].username+"</h4></div>";
           container.insertAdjacentHTML('beforeend', follower)
         }
         toggleFollowers = 1;

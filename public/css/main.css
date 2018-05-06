@@ -1,10 +1,10 @@
 .form-container {
   width: 50%;
-  height: 50%;
   background-color: #fff;
   margin: 10% auto 0;
   box-sizing: border-box;
   border-radius: 25px;
+  padding: 10px 10px 15px 10px;
   -webkit-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
   -moz-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
   -ms-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
@@ -13,7 +13,7 @@
   overflow: auto;
 }
 .form-container h1 {
-  margin: 5% auto 0;
+  margin: 2% auto 0;
   width: 60%;
   text-align: center;
 }
@@ -32,7 +32,7 @@
 }
 .form-container .field textarea {
   width: 100%;
-  height: 80%;
+  height: 13em;
   -webkit-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
   -moz-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
   -ms-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
@@ -40,6 +40,7 @@
   box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
   border: 1px solid #1da1f2;
   border-radius: 7px;
+  margin-bottom: 0.7em;
 }
 .form-container .field textarea:focus {
   -webkit-box-shadow: 0px 0px 10px 2 rgba(204,204,204,0.9);
@@ -58,7 +59,6 @@
   padding: 4px 12px;
   font-weight: bold;
   background-color: #fff;
-  margin: 3% 0;
   display: block;
 }
 
@@ -76,6 +76,11 @@
   }
   .form-container h1 {
     font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .form-container {
+    width: 80%;
   }
 }
 html {
@@ -177,9 +182,8 @@ main .posts .tweet, main .posts #container .list {
   background-color: #fff;
   border-radius: 20px;
   width: 80%;
-  height: 10em;
   margin: 0 auto 2%;
-  padding: 0;
+  padding: 10px;
   -webkit-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
   -moz-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
   -ms-box-shadow: 2px 3px 3px 0px rgba(122,113,122,0.75);
@@ -194,7 +198,9 @@ main .posts .tweet, main .posts #container .list {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  overflow: auto;
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: hidden;
 }
 main .posts .tweet h2, main .posts #container .list h2 {
   order: 2;
@@ -214,7 +220,8 @@ main .posts .tweet img, main .posts #container .list img {
   height: 48px;
 }
 main .posts .tweet p, main .posts #container .list p {
-  margin: 0 0 5% 20%;
+  margin: 0 0 2% 20%;
+  width: 80%;
   order: 5;
   color: #1da1f2;
   font-size: 2em;
@@ -230,8 +237,8 @@ main .posts .tweet:hover, main .posts #container .list:hover {
 main .posts #container {
   display: none;
 }
-main .posts #container .list {
-  max-height: 5em !important;
+main .posts #container .list img {
+  margin-top: 1% !important;
 }
 main .posts #container .list:hover {
   -webkit-transform: translate(-1%,0);
@@ -263,13 +270,9 @@ main .posts #container .list:hover {
   }
   .posts p {
     font-size: 1.5em !important;
-    margin-bottom: 10% !important;
   }
 }
-@media only screen and (max-width: 810px) {
-  .posts .tweet, main .posts #container .list {
-    height: 8em !important;
-  }
+@media only screen and (max-width: 840px) {
   .posts h2 {
     font-size: 0.8em;
     margin-top: 2.9% !important;
@@ -301,41 +304,32 @@ main .posts #container .list:hover {
   }
 }
 @media only screen and (max-width: 650px) {
-  .posts .tweet, main .posts #container .list {
-    height: 7em !important;
-  }
-  .posts .tweet h2, main .posts #container .list h2 {
+  .posts h2 {
     margin-top: 3.5% !important;
   }
-  .posts .tweet h4, main .posts #container .list h4 {
+  .posts h4 {
     margin-top: 4.6% !important;
   }
-  .posts .tweet h4:nth-of-type(2), main .posts #container .list h4:nth-of-type(2) {
+  .posts h4:nth-of-type(2) {
     display: none;
   }
-  .posts .tweet p, main .posts #container .list p {
+  .posts p {
     font-size: 1em !important;
   }
 }
 @media only screen and (max-width: 550px) {
-  .posts .tweet, main .posts #container .list {
-    height: 6em !important;
-  }
-  .posts .tweet img, main .posts #container .list img {
+  .posts img {
     width: 38px !important;
     height: 38px !important;
   }
-  .posts .tweet h2, main .posts #container .list h2 {
+  .posts h2 {
     margin-top: 5% !important;
   }
-  .posts .tweet h4, main .posts #container .list h4 {
+  .posts h4 {
     margin-top: 6.5% !important;
   }
-  .posts .tweet p, main .posts #container .list p {
+  .posts p {
     font-size: 0.8em !important;
-  }
-  .posts .list {
-    height: 3em !important;
   }
 
   .profile {
