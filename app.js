@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 var client = new twitter(control);
 
 //INPUT USERID IN ORDER TO SEARCH FOR YOUR LAST TWEETS
-var userID = 992128989924855809;
+var userID = 0;
 
 var object = {
   "username": "",
